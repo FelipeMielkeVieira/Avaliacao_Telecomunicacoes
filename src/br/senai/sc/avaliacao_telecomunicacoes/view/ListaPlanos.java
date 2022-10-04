@@ -2,6 +2,7 @@
 
 import br.senai.sc.avaliacao_telecomunicacoes.controller.PlanoController;
 import br.senai.sc.avaliacao_telecomunicacoes.model.entities.Operadora;
+import br.senai.sc.avaliacao_telecomunicacoes.model.entities.Plano;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -19,6 +20,7 @@ import java.awt.event.ActionListener;
     private JButton voltarButton;
     private JButton editarButton;
     private JButton removerButton;
+     private JButton verDetalhesButton;
 
      public ListaPlanos(Operadora operadora) {
         criarComponentes(operadora);
@@ -67,7 +69,15 @@ import java.awt.event.ActionListener;
                 filtroOperadora.setVisible(true);
             }
         });
-    }
+         verDetalhesButton.addActionListener(new ActionListener() {
+             @Override
+             public void actionPerformed(ActionEvent e) {
+                 PlanoController controller = new PlanoController();
+                 Plano planoAtual = controller.buscarPlano((Integer) table1.getValueAt(table1.getSelectedRow(), 0));
+                 JOptionPane.showMessageDialog(null, planoAtual.toString());
+             }
+         });
+     }
 
     private void criarComponentes(Operadora operadora) {
         PlanoController controller = new PlanoController();

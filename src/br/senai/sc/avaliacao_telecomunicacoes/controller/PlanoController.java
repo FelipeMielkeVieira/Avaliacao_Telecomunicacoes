@@ -6,6 +6,11 @@ import br.senai.sc.avaliacao_telecomunicacoes.model.service.PlanoService;
 
 import java.util.Collection;
 
+/**
+ * Classe usada para integrar a view com o service, realizando todas as ações necessárias para que as funções da view
+ * sejam redirecionadas para a service, que fará toda a conexão com o banco de dados. As mesmas funções presentes no
+ * PlanoDAO e PlanoService são transmitidas para essa classe.
+ */
 public class PlanoController {
 
     public void cadastrarPlano(String nomePlano, String beneficiosPlano, Double qtdDadosPlano, Double qtdDadosBonusPlano, Double valorPlano, Operadora operadoraPlano) {

@@ -47,7 +47,7 @@ public class PlanoDAO {
             }
         } catch (Exception exception) {
             if (exception instanceof ErroExecucao) {
-                throw new ErroExecucao();
+                throw exception;
             }
             throw new ErroPreparacao();
         }
@@ -66,7 +66,7 @@ public class PlanoDAO {
             }
         } catch (Exception exception) {
             if (exception instanceof ErroExecucao) {
-                throw new ErroExecucao();
+                throw exception;
             }
             throw new ErroPreparacao();
         }
@@ -102,7 +102,7 @@ public class PlanoDAO {
             }
         } catch (Exception exception) {
             if (exception instanceof ErroExecucao) {
-                throw new ErroExecucao();
+                throw exception;
             }
             throw new ErroPreparacao();
         }
@@ -122,15 +122,13 @@ public class PlanoDAO {
                 return listaPlanos;
             } catch (Exception exception) {
                 if (exception instanceof ErroTratamento) {
-                    throw new ErroTratamento();
+                    throw exception;
                 }
                 throw new ErroExecucao();
             }
         } catch (Exception exception) {
-            if (exception instanceof ErroExecucao) {
-                throw new ErroExecucao();
-            } else if (exception instanceof ErroTratamento) {
-                throw new ErroTratamento();
+            if (exception instanceof ErroExecucao || exception instanceof ErroTratamento) {
+                throw exception;
             }
             throw new ErroPreparacao();
         }
@@ -150,15 +148,13 @@ public class PlanoDAO {
                 return listaPlanos;
             } catch (Exception exception) {
                 if (exception instanceof ErroTratamento) {
-                    throw new ErroTratamento();
+                    throw exception;
                 }
                 throw new ErroExecucao();
             }
         } catch (Exception exception) {
-            if (exception instanceof ErroExecucao) {
-                throw new ErroExecucao();
-            } else if (exception instanceof ErroTratamento) {
-                throw new ErroTratamento();
+            if (exception instanceof ErroExecucao || exception instanceof ErroTratamento) {
+                throw exception;
             }
             throw new ErroPreparacao();
         }
@@ -176,15 +172,13 @@ public class PlanoDAO {
                 }
             } catch (Exception exception) {
                 if (exception instanceof ErroTratamento) {
-                    throw new ErroTratamento();
+                    throw exception;
                 }
                 throw new ErroExecucao();
             }
         } catch (Exception exception) {
-            if (exception instanceof ErroExecucao) {
+            if (exception instanceof ErroExecucao || exception instanceof ErroTratamento) {
                 throw new ErroExecucao();
-            } else if (exception instanceof ErroTratamento) {
-                throw new ErroTratamento();
             }
             throw new ErroPreparacao();
         }

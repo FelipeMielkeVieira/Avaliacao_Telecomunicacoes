@@ -60,15 +60,13 @@ public class Plano {
 
     @Override
     public String toString() {
-        return "Plano{" +
-                "idPlano=" + idPlano +
-                ", nomePlano='" + nomePlano + '\'' +
-                ", beneficiosPlano='" + beneficiosPlano + '\'' +
-                ", qtdDadosPlano=" + qtdDadosPlano +
-                ", qtdDadosBonusPlano=" + qtdDadosBonusPlano +
-                ", valorPlano=" + valorPlano +
-                ", operadoraPlano=" + operadoraPlano +
-                '}';
+        return "ID do Plano: " + this.getIdPlano() +
+                "\nNome do Plano: " + this.getNomePlano() +
+                "\nQuantidade de Dados: " + this.getQtdDadosPlano() +
+                "\nQuantidade de Dados Bônus: " + this.getQtdDadosBonusPlano() +
+                "\nBenefícios do Plano: " + this.getBeneficiosPlano() +
+                "\nOperadora do Plano: " + this.getOperadoraPlano().toString() +
+                "\nValor do Plano: " + this.getValorPlano();
     }
 
     public static Plano cadastrar(String nomePlano, String beneficiosPlano, Double qtdDadosPlano, Double qtdDadosBonusPlano, Double valorPlano, Operadora operadoraPlano) {
@@ -79,55 +77,27 @@ public class Plano {
         return idPlano;
     }
 
-    public void setIdPlano(Integer idPlano) {
-        this.idPlano = idPlano;
-    }
-
     public String getNomePlano() {
         return nomePlano;
-    }
-
-    public void setNomePlano(String nomePlano) {
-        this.nomePlano = nomePlano;
     }
 
     public String getBeneficiosPlano() {
         return beneficiosPlano;
     }
 
-    public void setBeneficiosPlano(String beneficiosPlano) {
-        this.beneficiosPlano = beneficiosPlano;
-    }
-
     public Double getQtdDadosPlano() {
         return qtdDadosPlano;
-    }
-
-    public void setQtdDadosPlano(Double qtdDadosPlano) {
-        this.qtdDadosPlano = qtdDadosPlano;
     }
 
     public Double getQtdDadosBonusPlano() {
         return qtdDadosBonusPlano;
     }
 
-    public void setQtdDadosBonusPlano(Double qtdDadosBonusPlano) {
-        this.qtdDadosBonusPlano = qtdDadosBonusPlano;
-    }
-
     public Double getValorPlano() {
         return valorPlano;
     }
 
-    public void setValorPlano(Double valorPlano) {
-        this.valorPlano = valorPlano;
-    }
-
     public Operadora getOperadoraPlano() {
         return operadoraPlano;
-    }
-
-    public void setOperadoraPlano(Operadora operadoraPlano) {
-        this.operadoraPlano = operadoraPlano;
     }
 }
