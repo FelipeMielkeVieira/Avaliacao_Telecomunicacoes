@@ -13,7 +13,7 @@ import java.sql.DriverManager;
 public class ConexaoFactory {
 
     String URL = "jdbc:mysql://localhost:3306/planos_telecomunicacoes";
-    String USER = "root";
+    String USER = "roo";
     String PASSWORD = "root";
 
     public Connection conectaDB() throws ErroConexao {

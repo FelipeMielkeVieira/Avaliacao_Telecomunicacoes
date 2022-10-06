@@ -81,12 +81,16 @@ import java.awt.event.ActionListener;
 
     private void criarComponentes(Operadora operadora) {
         PlanoController controller = new PlanoController();
-        if(operadora == null) {
-            table1.setModel(new DefaultTableModelPlanos(controller.buscarTodos()));
-        } else {
-            table1.setModel(new DefaultTableModelPlanos(controller.buscarPorOperadora(operadora)));
+        try {
+            if(operadora == null) {
+                table1.setModel(new DefaultTableModelPlanos(controller.buscarTodos()));
+            } else {
+                table1.setModel(new DefaultTableModelPlanos(controller.buscarPorOperadora(operadora)));
+            }
+            table1.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        } catch (RuntimeException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
         }
-        table1.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
         setContentPane(painelLista);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
